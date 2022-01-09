@@ -35,8 +35,8 @@ module.exports = {
             "/img/products/GT0917/with-bg/2.jpg",
             "/img/products/GT0917/with-bg/3.jpg",
             "/img/products/GT0917/with-bg/4.jpg",
-          ]
-        }
+          ],
+        },
       },
     ],
     texts: {
@@ -75,6 +75,12 @@ module.exports = {
         sub: `Мы привлекли к работе стилистов, 
         чтобы создать максимально трендовую 
         и универсальную модель на каждый день!`,
+      },
+      cert: {
+        title:
+          "При заказе любой парЫ обуви вы получите сертификат на вторую покупку!!!",
+        bg_text: "Сертификат",
+        image: "/img/cert.jpg",
       },
     },
   },
