@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@800&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+@import "./components/price";
+@import "./components/titles";
+@import "./sections/hero";
+@import "./sections/advantages";
+@import "./sections/gallery";
+
+.max-width-container {
+  max-width: 1440px;
+  @apply mx-auto w-full;
+}
+
+.exo2-font {
+  font-family: "Exo 2", sans-serif;
+}
+
+body {
+  @apply p-0 m-0;
+  font-family: "Montserrat", sans-serif;
+}
+
+

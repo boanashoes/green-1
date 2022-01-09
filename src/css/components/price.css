@@ -1,0 +1,9 @@
+.price {
+  @apply rounded-full bg-white py-2.5 px-12;
+}
+.price__new {
+  @apply exo2-font font-bold text-3xl text-primary;
+}
+.price__old {
+  @apply exo2-font font-medium text-lg text-dark;
+}

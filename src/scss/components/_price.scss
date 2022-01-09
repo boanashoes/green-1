@@ -1,0 +1,10 @@
+.price {
+    @apply rounded-full bg-white py-2.5 px-12 inline-block;
+
+    &__new {
+        @apply exo2-font font-bold text-xl md:text-3xl text-primary;
+    }
+    &__old {
+        @apply exo2-font font-medium text-xs md:text-lg text-dark;
+    }
+}

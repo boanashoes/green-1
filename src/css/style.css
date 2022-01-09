@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@800&family=Montserrat:wght@400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.price {
+  @apply rounded-full bg-white py-2.5 px-12 inline-block;
+}
+.price__new {
+  @apply exo2-font font-bold text-xl md:text-3xl text-primary;
+}
+.price__old {
+  @apply exo2-font font-medium text-xs md:text-lg text-dark;
+}
+
+.title-large {
+  @apply exo2-font text-lg md:text-2xl lg:text-3xl xl:text-4xl leading-tight uppercase;
+}
+
+.hero {
+  @apply box-border w-full min-h-[calc(min(100vh,1080px))] bg-cover pt-10 flex flex-col;
+  background-image: url("/img/hero_bg.jpg");
+  background-position: 50% 60%;
+}
+.hero .max-width-container {
+  @apply flex flex-col flex-grow;
+}
+.hero__logo {
+  @apply w-14 block mx-auto flex-grow-0;
+  @apply md:w-24 lg:w-36;
+}
+.hero__discount {
+  @apply exo2-font text-center text-primary mt-3 text-sm;
+  @apply md:text-2xl md:mt-2 lg:text-3xl;
+}
+.hero__content {
+  @apply relative pb-40 px-8 grid grid-cols-1;
+  @apply lg:grid-cols-2;
+}
+.hero__col-1, .hero__col-2 {
+  @apply relative flex flex-col justify-center;
+}
+.hero__col-1 {
+  @apply lg:block;
+}
+.hero__title {
+  @apply exo2-font text-lg uppercase text-dark text-center w-[16ch] mx-auto;
+  @apply md:mx-0 md:text-5xl md:mt-1 lg:text-left lg:mt-16 2xl:text-7xl;
+}
+.hero .row {
+  @apply mt-9 flex flex-row items-center md:pr-20;
+  @apply md:justify-between lg:mt-0 lg:ml-1;
+}
+.hero__subtitle {
+  @apply font-semibold text-sm text-dark opacity-75 inline-block;
+  @apply md:text-2xl md:text-right lg:mt-9 lg:text-left 2xl:text-4xl;
+  width: 20ch;
+}
+.hero__button {
+  @apply rounded-full py-5 px-8 inline-block mt-12 font-bold text-white uppercase text-lg mx-auto;
+  @apply md:px-16 lg:mx-0 2xl:text-2xl;
+  background: linear-gradient(90deg, #ff5858 0%, #f09819 100%);
+}
+.hero__mobile-button {
+  @apply inline text-center lg:hidden;
+}
+.hero__desktop-button {
+  @apply hidden lg:inline-block flex-grow-0;
+}
+.hero__col-2__content {
+  @apply my-auto h-[80%];
+  @apply md:h-auto;
+}
+.hero__image {
+  @apply w-full h-auto mx-auto max-w-none;
+  @apply md:-my-20 md:w-[512px] lg:w-[612px] lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:mt-12 2xl:w-full 2xl:h-auto;
+}
+.hero__price-mobile {
+  @apply inline-block lg:hidden relative -left-12 flex-shrink-0;
+}
+.hero__price-desktop {
+  @apply hidden lg:inline-block absolute top-[12%] right-40;
+}
+
+.advantages-wrapper {
+  @apply relative px-3 z-10;
+}
+
+.advantages {
+  @apply rounded-lg bg-white -my-20 py-10 px-6;
+  @apply lg:px-16;
+}
+.advantages__grid {
+  @apply flex flex-col md:flex-row md:justify-between;
+}
+.advantages__item {
+  @apply flex flex-row my-3 mr-4;
+}
+.advantages__item:last-child {
+  @apply mr-0;
+}
+.advantages__icon {
+  @apply mr-2 w-10 h-10;
+  @apply md:w-12 md:h-12;
+}
+.advantages__title {
+  @apply font-bold text-base text-secondary uppercase;
+  @apply lg:text-xl;
+}
+.advantages__subtitle {
+  @apply text-sm text-dark font-medium;
+  @apply lg:text-base;
+}
+
+.gallery {
+  @apply bg-green pt-40 pb-12 px-6 overflow-x-hidden lg:pb-28;
+}
+.gallery .title-large {
+  @apply text-white text-center max-w-[25ch] mx-auto;
+}
+.gallery__grid {
+  @apply grid grid-cols-2 md:grid-cols-4 mt-5 gap-2 md:gap-3 md:mt-10 lg:gap-x-5 lg:gap-y-16;
+}
+.gallery__p-1, .gallery__p-2 {
+  @apply col-span-2 text-sm text-center text-white py-3;
+  @apply md:text-base md:flex md:items-center lg:text-xl xl:text-2xl;
+}
+.gallery__p-1 {
+  @apply md:text-left lg:pr-8;
+}
+.gallery__p-2 {
+  @apply md:text-right;
+  @apply lg:items-start lg:flex-col lg:justify-between lg:pb-0 lg:pl-8;
+}
+.gallery__sub {
+  @apply relative w-full;
+}
+.gallery__sub__text {
+  @apply relative lg:float-right z-10 text-white font-medium py-4 max-w-[40ch];
+}
+.gallery__sub__bg {
+  @apply absolute top-0 bottom-0 w-screen bg-gradient-to-r from-indigo-500 to-purple-500;
+}
+.gallery__sub--mobile {
+  @apply block lg:hidden bg-gradient-to-r from-indigo-500 to-purple-500 py-2 px-4 text-center md:py-6 md:px-8;
+}
+.gallery__sub--mobile .gallery__sub__text {
+  @apply py-2 px-4 border-2 border-white text-xs md:text-lg max-w-none md:py-6 md:px-8;
+}
+.gallery__sub--desktop {
+  @apply hidden lg:block;
+}
+
+.max-width-container {
+  max-width: 1440px;
+  @apply mx-auto w-full;
+}
+
+.exo2-font {
+  font-family: "Exo 2", sans-serif;
+}
+
+body {
+  @apply p-0 m-0;
+  font-family: "Montserrat", sans-serif;
+}

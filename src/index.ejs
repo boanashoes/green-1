@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=320, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="max-width-container">
+        <img class="hero__logo" src="/img/boana_logo.png" alt="" />
+        <div class="hero__discount">
+          <%= texts.hero.discount %><%= products[0].discount %>%
+        </div>
+        <div class="hero__content">
+          <div class="hero__col-1">
+            <div class="hero__title"><%= texts.hero.title %></div>
+            <div class="row">
+              <div class="price hero__price-mobile">
+                <div class="price__new"><%= products[0].price.new %> грн</div>
+                <div class="price__old"><%= products[0].price.old %> грн</div>
+              </div>
+              <div class="hero__subtitle"><%= texts.hero.subtitle %></div>
+            </div>
+            <a href="#" class="hero__button hero__desktop-button">
+              <%= texts.hero.button %>
+            </a>
+          </div>
+          <div class="hero__col-2">
+            <div class="hero__col-2__content">
+              <img
+                src="/img/products/<%= products[0].model %>/transparent.png"
+                alt=""
+                class="hero__image"
+              />
+              <div class="price hero__price-desktop">
+                <div class="price__new"><%= products[0].price.new %> грн</div>
+                <div class="price__old"><%= products[0].price.old %> грн</div>
+              </div>
+            </div>
+            <a href="#" class="hero__mobile-button">
+              <div class="hero__button"><%= texts.hero.button %></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="advantages-wrapper">
+      <div class="max-width-container">
+        <div class="advantages">
+          <div class="advantages__grid">
+            <% for (let advantage of texts.advantages) { %>
+            <div class="advantages__item">
+              <img class="advantages__icon" src="<%= advantage.icon %>" />
+              <div class="advantages__text">
+                <div class="advantages__title"><%= advantage.title %></div>
+                <div class="advantages__subtitle">
+                  <%= advantage.subtitle %>
+                </div>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gallery">
+      <div class="max-width-container">
+        <div class="title-large"><%= texts.gallery.title %></div>
+        <div class="gallery__grid">
+          <div class="gallery__p-1"><%= texts.gallery.first_p %></div>
+          <% for (let src of products[0].images.with_bg) { %>
+          <img class="gallery__image" src="<%= src %>" />
+          <% } %>
+
+          <div class="gallery__p-2">
+            <%= texts.gallery.second_p %>
+            <div class="gallery__sub gallery__sub--desktop">
+              <div class="gallery__sub__text"><%= texts.gallery.sub %></div>
+              <div class="gallery__sub__bg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="gallery__sub gallery__sub--mobile">
+      <div class="max-width-container">
+        <div class="gallery__sub__text"><%= texts.gallery.sub %></div>
+      </div>
+    </section>
+  </body>
+</html>

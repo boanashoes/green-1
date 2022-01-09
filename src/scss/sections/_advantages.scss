@@ -1,0 +1,32 @@
+.advantages-wrapper {
+    @apply relative px-3 z-10;
+}
+.advantages {
+    @apply rounded-lg bg-white -my-20 py-10 px-6;
+    @apply lg:px-16;
+
+    &__grid {
+        // @apply grid grid-cols-1 gap-6;
+        // @apply grid-cols-3;
+        @apply flex flex-col md:flex-row md:justify-between;
+    }
+
+    &__item {
+        @apply flex flex-row my-3 mr-4;
+    }
+    &__item:last-child {
+        @apply mr-0;
+    }
+    &__icon {
+        @apply mr-2 w-10 h-10;
+        @apply md:w-12 md:h-12;
+    }
+    &__title {
+        @apply font-bold text-base text-secondary uppercase;
+        @apply lg:text-xl;
+    }
+    &__subtitle {
+        @apply text-sm text-dark font-medium;
+        @apply lg:text-base;
+    }
+}

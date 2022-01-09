@@ -1,0 +1,44 @@
+.gallery {
+    @apply bg-green pt-40 pb-12 px-6 overflow-x-hidden lg:pb-28;
+
+    .title-large {
+        @apply text-white text-center max-w-[25ch] mx-auto;
+    }
+
+    &__grid {
+        @apply grid grid-cols-2 md:grid-cols-4 mt-5 gap-2 md:gap-3 md:mt-10 lg:gap-x-5 lg:gap-y-16;
+    }
+    &__p-1, &__p-2 {
+        @apply col-span-2 text-sm text-center text-white py-3;
+        @apply md:text-base md:flex md:items-center lg:text-xl xl:text-2xl;
+    }
+    &__p-1 {
+        @apply md:text-left lg:pr-8;
+    }
+    &__p-2 {
+        @apply md:text-right;
+        @apply lg:items-start lg:flex-col lg:justify-between lg:pb-0 lg:pl-8;
+    }
+    &__sub {
+        @apply relative w-full;
+        &__text {
+            @apply relative lg:float-right z-10 text-white font-medium py-4 max-w-[40ch];
+        }
+        &__bg {
+            @apply absolute top-0 bottom-0 w-screen bg-gradient-to-r from-indigo-500 to-purple-500;
+        }
+
+        &--mobile {
+            @apply block lg:hidden bg-gradient-to-r from-indigo-500 to-purple-500 py-2 px-4 text-center md:py-6 md:px-8;
+        }
+        &--mobile & {
+            &__text {
+                @apply py-2 px-4 border-2 border-white text-xs md:text-lg max-w-none md:py-6 md:px-8;
+            }
+        }
+
+        &--desktop {
+            @apply hidden lg:block;
+        }
+    }
+}

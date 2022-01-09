@@ -1,0 +1,66 @@
+.hero {
+    @apply box-border w-full min-h-[calc(min(100vh,1080px))] bg-cover pt-10 flex flex-col;
+    background-image: url("/img/hero_bg.jpg");
+    background-position: 50% 60%;
+  
+    .max-width-container {
+      @apply flex flex-col flex-grow;
+    }
+  
+    &__logo {
+      @apply w-14 block mx-auto flex-grow-0;
+      @apply md:w-24 lg:w-36;
+    }
+    &__discount {
+      @apply exo2-font text-center text-primary mt-3 text-sm;
+      @apply md:text-2xl md:mt-2 lg:text-3xl;
+    }
+    &__content {
+      @apply relative pb-40 px-8 grid grid-cols-1;
+      @apply lg:grid-cols-2;
+    }
+    &__col-1, &__col-2 {
+      @apply relative flex flex-col justify-center;
+    }
+    &__col-1 {
+      @apply lg:block;
+    }
+    &__title {
+      @apply exo2-font text-lg uppercase text-dark text-center w-[16ch] mx-auto;
+      @apply md:mx-0 md:text-5xl md:mt-1 lg:text-left lg:mt-16 2xl:text-7xl;
+    }
+    .row {
+      @apply mt-9 flex flex-row items-center md:pr-20;
+      @apply md:justify-between lg:mt-0 lg:ml-1;
+    }
+    &__subtitle {
+      @apply font-semibold text-sm text-dark opacity-75 inline-block;
+      @apply md:text-2xl md:text-right lg:mt-9 lg:text-left 2xl:text-4xl;
+      width: 20ch;
+    }
+    &__button {
+      @apply rounded-full py-5 px-8 inline-block mt-12 font-bold text-white uppercase text-lg mx-auto;
+      @apply md:px-16 lg:mx-0 2xl:text-2xl;
+      background: linear-gradient(90deg, #ff5858 0%, #f09819 100%);
+    }
+    &__mobile-button {
+      @apply inline text-center lg:hidden;
+    }
+    &__desktop-button {
+      @apply hidden lg:inline-block flex-grow-0;
+    }
+    &__col-2__content {
+      @apply my-auto h-[80%];
+      @apply md:h-auto;
+    }
+    &__image {
+      @apply w-full h-auto mx-auto max-w-none;
+      @apply md:-my-20 md:w-[512px] lg:w-[612px] lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:mt-12 2xl:w-full 2xl:h-auto;
+    }
+    &__price-mobile {
+      @apply inline-block lg:hidden relative -left-12 flex-shrink-0;
+    }
+    &__price-desktop {
+      @apply hidden lg:inline-block absolute top-[12%] right-40;
+    }
+  }
