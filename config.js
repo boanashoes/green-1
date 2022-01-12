@@ -23,6 +23,8 @@ module.exports = {
     fb_pixel_code: "3033676103423109",
     products: [
       {
+        title: "Зимние ботинки на меху",
+        type: "ботинки",
         discount: 40,
         model: "GT0917",
         price: {
@@ -30,13 +32,81 @@ module.exports = {
           old: 2299,
         },
         images: {
-          with_bg: [
+          gallery_section: [
             "/img/products/GT0917/with-bg/1.jpg",
             "/img/products/GT0917/with-bg/2.jpg",
             "/img/products/GT0917/with-bg/3.jpg",
             "/img/products/GT0917/with-bg/4.jpg",
           ],
+          product_section: [
+            "/img/products/GT0917/white-bg/1.jpg",
+            "/img/products/GT0917/white-bg/2.jpg",
+            "/img/products/GT0917/white-bg/3.jpg",
+            "/img/products/GT0917/white-bg/4.jpg",
+            "/img/products/GT0917/white-bg/5.jpg",
+          ],
         },
+        specs: {
+          "Бренд": "BOANA",
+          "Модель": "GT0917",
+          "Вид товара": "Ботинки",
+          "Метериал": "Кожа",
+          "Подошва": "Ниже 40мм",
+          "Производитель": "Украина",
+          "Сезонность": "Весна/Зима",
+        },
+        sizes: {
+          36: "23см",
+          37: "23,5см",
+          38: "24,5см",
+          39: "25см",
+          40: "25,5см",
+        },
+        color_title: "Цвет",
+        colors: ["Бежевый", "Черный"],
+      },
+      {
+        title: "Зимние ботинки на меху",
+        type: "ботинки",
+        discount: 40,
+        model: "GT0917",
+        price: {
+          new: 1379,
+          old: 2299,
+        },
+        images: {
+          gallery_section: [
+            "/img/products/GT0917/with-bg/1.jpg",
+            "/img/products/GT0917/with-bg/2.jpg",
+            "/img/products/GT0917/with-bg/3.jpg",
+            "/img/products/GT0917/with-bg/4.jpg",
+          ],
+          product_section: [
+            "/img/products/GT0917/white-bg/1.jpg",
+            "/img/products/GT0917/white-bg/2.jpg",
+            "/img/products/GT0917/white-bg/3.jpg",
+            "/img/products/GT0917/white-bg/4.jpg",
+            "/img/products/GT0917/white-bg/5.jpg",
+          ],
+        },
+        specs: {
+          "Бренд": "BOANA",
+          "Модель": "GT0917",
+          "Вид товара": "Ботинки",
+          "Метериал": "Кожа",
+          "Подошва": "Ниже 40мм",
+          "Производитель": "Украина",
+          "Сезонность": "Весна/Зима",
+        },
+        sizes: {
+          36: "23см",
+          37: "23,5см",
+          38: "24,5см",
+          39: "25см",
+          40: "25,5см",
+        },
+        color_title: "Цвет",
+        colors: ["Бежевый", "Черный"],
       },
     ],
     texts: {
@@ -82,6 +152,20 @@ module.exports = {
         bg_text: "Сертификат",
         image: "/img/cert.jpg",
       },
+      product: {
+        discountText: "Скидка -",
+      },
+      buy_form: {
+        title: "Заказать",
+        placeholders: {
+          name: "Имя",
+          phone: "Телефон",
+        },
+        button: "ЗАКАЗАТЬ СЕЙЧАС",
+        sub_button: "+ сертификат на 10%",
+      },
+      other_models:
+        "В продаже есть другие модели, которые могут вам понравиться!",
     },
   },
 };

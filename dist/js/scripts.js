@@ -1,0 +1,1 @@
+(()=>{const e=document.getElementsByClassName("product__selector__e");for(const t of e)t.onclick=function(){for(const e of this.parentElement.children)e.classList.remove("product__selector__e--selected");this.classList.add("product__selector__e--selected")}})();

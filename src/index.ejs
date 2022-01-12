@@ -71,7 +71,7 @@
         <div class="title-large"><%= texts.gallery.title %></div>
         <div class="gallery__grid">
           <div class="gallery__p-1"><%= texts.gallery.first_p %></div>
-          <% for (let src of products[0].images.with_bg) { %>
+          <% for (let src of products[0].images.gallery_section) { %>
           <img class="gallery__image" src="<%= src %>" />
           <% } %>
 
@@ -96,9 +96,110 @@
         <div class="title-large"><%= texts.cert.title %></div>
         <div class="cert__img-wrapper">
           <span class="cert__bg-text"><%= texts.cert.bg_text %></span>
-          <img src="<%= texts.cert.image %>" alt="" class="cert__img">
+          <img src="<%= texts.cert.image %>" alt="" class="cert__img" />
         </div>
       </div>
     </section>
+    <% for (let productIndex in products) { %>
+    <% const product = products[productIndex] %>
+    <section class="product">
+      <div class="max-width-container">
+        <div class="product__grid">
+          <div class="product__grid__col">
+            <div class="title-large"><%= product.title %></div>
+            <div class="product__images product__images--mobile">
+              <!-- prettier-ignore -->
+              <% for (
+                let image of Object.entries(product.images.product_section)
+              ) { %>
+                <img
+                  src="<%= image[1] %>"
+                  alt=""
+                  class="product__image <%= image[0] == 0 ? "product__image--first" : "" %> <%= image[0] > 4 ? "product__image--hidden" : "" %>">
+              <% } %>
+            </div>
+            <table class="product__specs">
+              <% for (let spec of Object.entries(product.specs)) { %>
+              <tr>
+                <td><%= spec[0] %>:</td>
+                <td><%= spec[1] %></td>
+              </tr>
+              <% } %> <% if (product.colors.length == 1) { %>
+              <tr>
+                <td><%= product.color_title %>:</td>
+                <td><%= product.colors[0] %></td>
+              </tr>
+              <% } %>
+            </table>
+            <div class="product__selector" id="n<%= +productIndex + 1 %>-size-selector">
+              <% let first = true; for (let size of Object.entries(product.sizes)) { %>
+              <div class="product__selector__e <%= first ? (first = false) || "product__selector__e--selected" : "" %>">
+                <div><%= size[0] %></div>
+                <div><%= size[1] %></div>
+              </div>
+              <% } %>
+            </div>
+            <% if (product.colors.length > 1) { %>
+            <div class="product__selector" id="n<%= +productIndex + 1 %>-size-selector">
+              <% let first = true; for (let color of product.colors) { %>
+              <div class="product__selector__e <%= first ? (first = false) || "product__selector__e--selected" : "" %>">
+                <div><%= color %></div>
+              </div>
+              <% } %>
+            </div>
+            <% } %>
+            <div class="product__price-row product__price-row--desktop">
+              <div class="price">
+                <div class="price__new"><%= product.price.new %> грн</div>
+                <div class="price__old"><%= product.price.old %> грн</div>
+              </div>
+              <div class="product__discount"><%= texts.product.discountText %><%= product.discount %>%</div>
+            </div>
+          </div>
+          <div class="product__grid__col">
+            <div class="product__images product__images--desktop">
+              <!-- prettier-ignore -->
+              <% for (
+                let image of Object.entries(product.images.product_section)
+              ) { %>
+                <img
+                  src="<%= image[1] %>"
+                  alt=""
+                  class="product__image <%= image[0] == 0 ? "product__image--first" : "" %> <%= image[0] > 4 ? "product__image--hidden" : "" %>">
+              <% } %>
+            </div>
+            <div class="product__price-row product__price-row--mobile">
+              <div class="price">
+                <div class="price__new"><%= product.price.new %> грн</div>
+                <div class="price__old"><%= product.price.old %> грн</div>
+              </div>
+              <div class="product__discount"><%= texts.product.discountText %><%= product.discount %>%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="buy-form">
+      <div class="max-width-container">
+        <div class="title-large"><%= texts.buy_form.title %> <%= product.type %></div>
+          <form class="buy-form__form">
+            <input type="text" class="buy-form__input" placeholder="<%= texts.buy_form.placeholders.name %>">
+            <input type="text" class="buy-form__input" placeholder="<%= texts.buy_form.placeholders.phone %>">
+            <div class="buy-form__submit-wrapper">
+              <button type="submit" class="buy-form__submit"><%= texts.buy_form.button %></button>
+              <div class="buy-form__sub-button"><%= texts.buy_form.sub_button %></div>
+            </div>
+          </form>
+        </div>
+    </section>
+    <% if (productIndex == 0) { %>
+      <section class="other-models-text">
+        <span><%= texts.other_models %></span>
+      </section>
+    <% } else if (productIndex < products.length - 1) { %>
+      <section class="spacer-section"></section>
+    <% } %>
+    <% } %>
+    <script src="/js/scripts.js"></script>
   </body>
 </html>

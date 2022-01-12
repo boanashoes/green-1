@@ -1,0 +1,98 @@
+.product {
+    @apply bg-green py-4 text-white lg:pt-24 lg:px-20;
+
+    .max-width-container {
+        @apply px-8;
+    }
+    .title-large {
+        @apply text-center mb-1.5 md:text-left md:text-2xl lg:text-4xl;
+    }
+
+    &__grid {
+        @apply md:grid md:grid-cols-2 md:gap-8 lg:gap-24;
+
+        &__col {
+            &:first-child {
+                @apply md:flex md:flex-col md:justify-between lg:justify-start;
+            }
+        }
+    }
+
+    &__images {
+        @apply grid grid-cols-4 gap-2;
+
+        &--mobile {
+            @apply grid md:hidden;
+        }
+        &--desktop {
+            @apply hidden md:grid;
+        }
+    }
+    &__image {
+        @apply mx-auto;
+
+        &--first {
+            @apply col-span-4;
+        }
+        &--hidden {
+            @apply hidden;
+        }
+    }
+
+    &__specs {
+        @apply w-full mt-6 text-sm md:text-base lg:text-2xl lg:mt-14;
+
+        td {
+            @apply py-0.5;
+        }
+
+        td:first-child {
+            @apply font-bold;
+        }
+        td:last-child {
+            @apply text-right;
+        }
+    }
+    &__selector {
+        @apply mt-3 -mx-8 md:mx-0 px-8 flex flex-row justify-center lg:mt-14 lg:text-xl;
+        background-color: #C7D19C;
+
+        &__e {
+            @apply px-2.5 py-3 divide-y-1 text-center cursor-pointer;
+
+            &--selected {
+                @apply bg-white text-dark;
+            }
+
+            div {
+                border-color: #A7A7A7;
+            }
+        }
+    }
+    &__price-row {
+        @apply mt-4 flex flex-row justify-between items-center;
+
+        &--mobile {
+            @apply flex lg:hidden;
+        }
+
+        &--desktop {
+            @apply hidden lg:flex;
+        }
+
+        .price {
+            @apply -ml-8 rounded-l-none px-8 py-1 md:rounded-full md:ml-0 lg:py-2;
+
+            &__new {
+                @apply text-2xl lg:text-3xl;
+            }
+            &__old {
+                @apply text-sm lg:text-base;
+            }
+        }
+    }
+    &__discount {
+        @apply flex-grow text-center font-bold text-xl lg:text-3xl;
+    }
+    
+}

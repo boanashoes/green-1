@@ -10,6 +10,9 @@ module.exports = {
       "2xl": "1536px",
     },
     extend: {
+      borderWidth: {
+        1: "1px",
+      },
       colors: {
         primary: "#FF5C7F",
         dark: "#494949",

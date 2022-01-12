@@ -7,6 +7,7 @@ const rename = require("gulp-rename");
 const htmlmin = require("gulp-htmlmin");
 const pngquant = require("gulp-pngquant");
 const imagemin = require("gulp-imagemin");
+const terser = require('gulp-terser');
 const browserSync = require('browser-sync').create();
 
 const config = require("./config.js");
@@ -79,11 +80,19 @@ function styles() {
     .pipe(dest(config.paths.dist.css));
 }
 
+function scripts() {
+  return src(`${config.paths.src.js}/**/*.js`)
+    .pipe(concat('scripts.js'))
+    .pipe(terser())
+    .pipe(dest(config.paths.dist.js));
+}
+
 function watchFiles() {
   watch(`${config.paths.src.base}/**/*.ejs`, series(html, previewReload));
   watch(`${config.paths.src.base}/**/*.png`, series(png, previewReload));
   watch(`${config.paths.src.base}/**/*.jpg`, series(jpg, previewReload));
   watch(`${config.paths.src.base}/**/*.svg`, series(svg, previewReload));
+  watch(`${config.paths.src.base}/**/*.js`, series(scripts, previewReload));
   watch(
     [config.config.tailwindjs, `${config.paths.src.scss}/**/*.scss`],
     series(styles, previewReload)
@@ -93,7 +102,9 @@ function watchFiles() {
   console.log("\n\t" + "Watching for Changes..\n");
 }
 
-exports.default = series(html, styles, png, svg, jpg, livePreview, watchFiles);
+exports.default = series(html, styles, scripts, png, svg, jpg, livePreview, watchFiles);
+exports.nowatch = series(html, styles, scripts, png, svg, jpg);
 exports.html = html;
+exports.scripts = scripts;
 exports.png = png;
 exports.jpg = jpg;

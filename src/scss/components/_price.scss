@@ -5,6 +5,6 @@
         @apply exo2-font font-bold text-xl md:text-3xl text-primary;
     }
     &__old {
-        @apply exo2-font font-medium text-xs md:text-lg text-dark;
+        @apply exo2-font font-medium text-xs md:text-lg text-dark -mt-1;
     }
 }
